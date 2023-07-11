@@ -1,8 +1,7 @@
 import express from 'express';
 
-import { createUser, getUserByEmail } from '../db/users';
+import { createUser, getUserByEmail } from '../database/users';
 import { random, authentication } from '../helpers';
-import { json } from 'body-parser';
 
 export const login = async (req: express.Request, res: express.Response) => {
     try {
