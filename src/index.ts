@@ -6,7 +6,7 @@ import compression from 'compression';
 import cors from 'cors';
 
 import connectDB from './database/connectDB';
-import router from './router';
+import router from './routers';
 
 const app = express();
 
