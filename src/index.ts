@@ -5,7 +5,7 @@ import cookieParser from 'cookie-parser';
 import compression from 'compression';
 import cors from 'cors';
 
-import mongoose from 'mongoose';
+import connectDB from './database/connectDB';
 import router from './router';
 
 const app = express();
@@ -24,10 +24,6 @@ server.listen(8080, () => {
     console.log('Server running on http://localhost:8080/');
 });
 
-const MONGO_URL = ''//mongoDB_URL
-
-mongoose.Promise = Promise;
-mongoose.connect(MONGO_URL);
-mongoose.connection.on('error', (error: Error) => console.log(error));
+connectDB();
 
 app.use('/', router());
