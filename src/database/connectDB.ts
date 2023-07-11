@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const MONGODB_URL = 'mongodb+srv://IoT-Admin:u4ASlefUYqKYq6TI@iot-api.20ytlbo.mongodb.net/?retryWrites=true&w=majority'//mongoDB_URL
+const MONGODB_URL = ''//mongoDB_URL
 
 const connectDB =async () => {
     try {
