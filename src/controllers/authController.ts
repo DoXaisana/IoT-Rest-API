@@ -45,6 +45,14 @@ export const register = async (req: express.Request, res: express.Response) => {
       return res.sendStatus(400);
     }
 
+    if (password.length < 8) {
+      return res.status(400).json({ error: "Password should be at least 8 characters long." });
+    }
+
+    if (!/[a-z]/.test(password) || !/[A-Z]/.test(password)) {
+      return res.status(400).json({ error: "Password should contain both lowercase and uppercase characters." });
+    }
+
     const existingUser = await getUserByEmail(email);
 
     if (existingUser) {
@@ -66,4 +74,4 @@ export const register = async (req: express.Request, res: express.Response) => {
     console.log(error);
     return res.sendStatus(400);
   }
-}
+};
